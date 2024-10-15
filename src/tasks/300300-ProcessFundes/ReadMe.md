@@ -7,7 +7,7 @@
    1. A container object which holds all the resources used to execute a program.
    2. A fundamental building block in windows OS.
 
-![A typical Windows Process](Images/50_50_Windows_Process.jpg)
+   ![A typical Windows Process](Images/50_50_Windows_Process.jpg)
 
    2. A process consists of
 
