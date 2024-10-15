@@ -20,4 +20,20 @@
 
     ![Select Columns](Images/63_50_ColumnSelection.jpg)
 
-9. 
+9. New objects are colored green. <kbd>⊞ Win</kbd>+<kbd>R</kbd> and then cmd, to start a cmd. You will notice that this is marked as green. This color appears for a few seconds. You can change it as follows.
+
+    ![Highlight duration](Images/64_50_DiffHighlightDuration.jpg)
+
+and we set it as follows.
+
+    ![Highlight duration setting](Images/65_50_DiffHighlightDurationSetting.jpg)
+
+10. Dotnet process. The color for dotnet process are dark blue. Click the item.
+
+    ![Highlight duration](Images/64_50_DiffHighlightDuration.jpg)
+
+11. You need to be an admin to see the following. Explore different tabs such as dotnet performance. 
+
+![Dotnet process](Images/66_50_DotnetProcessDetails.jpg)
+
+12. 
