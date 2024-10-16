@@ -27,11 +27,11 @@
 
    3. There are two main ways in which we can view process information, one is Task manager and other is process explorer. 
 
-   4. Task Manager
+      1. Task Manager
  
-   5. Process Explorer
+      2. Process Explorer
 
-   6. 
+   4. 
 
 ## References
 
