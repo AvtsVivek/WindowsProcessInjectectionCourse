@@ -22,9 +22,9 @@
 
 9. New objects are colored green. <kbd>⊞ Win</kbd>+<kbd>R</kbd> and then cmd, to start a cmd. You will notice that this is marked as green. This color appears for a few seconds. You can change it as follows.
 
-    ![Highlight duration](Images/64_50_DiffHighlightDuration.jpg)
-
-and we set it as follows.
+    ![Highlight duration](Images/64_50_DiffHighlightDuration.jpg) 
+    
+    and we set it as follows.
 
     ![Highlight duration setting](Images/65_50_DiffHighlightDurationSetting.jpg)
 
