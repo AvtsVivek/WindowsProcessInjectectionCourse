@@ -56,10 +56,28 @@
 
     ![SvcHost Processes](Images/70_50_Svchost_Props.jpg)
 
-    Note the user name, or the account under which these svc host services run. The SYSTEM account is the most power ful account, so any hacker injecting into these process, can do practially anything.
+    Note the user name, or the account under which these svc host services run. The SYSTEM account is the most power ful account, so any hacker injecting into these process, can do practially anything. That should be born in mind.
 
 15. There are three ways to sort the processes in process explorer. So click on the header of process name, three times.
 
     ![Process Sorting](Images/71_50_ThreeWaysOfSorting.jpg)
 
-16. 
+16. So if a process creates another process, then the first process is parent of the second. But note that, does not mean there is a dependencies between parent and child. The child can continue to live with the parent, that is, if the parent is terminated, the child will continue to live. The life time is completely independent. 
+
+    ![Parent Process](Images/72_50_ParentProcess.jpg)
+
+17. Note that the process ids can be reused. So if we really want a unique id, then take the id and start time togather, which will give you a unique identifier. 
+
+18. Lower Pane. You can start the lower pane, in two ways, clicking the icon or by View -> Show Lower Pane 
+
+    ![Show Lower Pane](Images/73_50_ShowLowerPane.jpg)
+
+19. It actually looks like the following where it shows the dlls loaded in that process. You can see the handles and threads as well. 
+
+    ![Show Lower Pane](Images/74_50_LowerPaneDllsLoaded.jpg)
+
+20. The following shows how to add more columns to handles grid by right clicking the header in of the respective grid. 
+
+    ![Handles Columns](Images/75_50_HandleColumns.jpg)
+
+21. 
