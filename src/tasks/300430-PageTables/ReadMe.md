@@ -94,7 +94,6 @@
 36. So it's going to be four bytes off from address 496 so it's going to be address 4100.
 
 
-
 ## Reference
 1. https://www.youtube.com/watch?v=KNUJhZCQZ9c
 2. https://www.youtube.com/watch?v=KNUJhZCQZ9c&list=PLiwt1iVUib9s2Uo5BeYmwkDFUh70fJPxX&index=5
