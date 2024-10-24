@@ -14,8 +14,8 @@
 3. asdfsadf
 
 ## Reference
-1. https://www.youtube.com/watch?v=KNUJhZCQZ9c
-2. https://www.youtube.com/watch?v=KNUJhZCQZ9c&list=PLiwt1iVUib9s2Uo5BeYmwkDFUh70fJPxX&index=5
+1. https://www.youtube.com/watch?v=ZjKS1IbiGDA
+2. https://www.youtube.com/watch?v=ZjKS1IbiGDA&list=PLiwt1iVUib9s2Uo5BeYmwkDFUh70fJPxX&index=6
 
 ## Some basic Math for Memory calcs
 
