@@ -11,7 +11,7 @@ Here is the edit.
 
 ![Props linker](Images/51_50_Props_Linker_Input_Edit.png)
 
-3. This changes the proj file as follows.
+3. This changes add the additional dependencies in proj file as follows.
 
 ```xml
 <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -31,6 +31,7 @@ to
 1. https://learn.microsoft.com/en-us/windows/win32/toolhelp/taking-a-snapshot-and-viewing-processes
 2. https://winterdom.com/dev/security/tokens/
 3. https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexa
+4. https://stackoverflow.com/q/79124363/1977871
 
 
 
