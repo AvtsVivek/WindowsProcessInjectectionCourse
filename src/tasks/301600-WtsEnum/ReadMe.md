@@ -23,9 +23,33 @@ to
 <AdditionalDependencies>wtsapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
 ```
 
+4. There is another way, to add this pragma on the top.
+
+```cpp
+#pragma comment(lib, "wtsapi32.lib")
+```
+
+5. 
+
 ## Notes
-1. The example is from here. 
-2. https://learn.microsoft.com/en-us/windows/win32/toolhelp/taking-a-snapshot-and-viewing-processes
+1. Windows Terminal Services.
+2. A set of functions intended for terminal services environment, but work equally well in a local environment.
+3. Functions exist for enumerating processes, sessions and getting detailed session information
+4. [WTSEnumerateProcesses(Ex)](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexa). 
+5. Ex is extended version.
+
+6. [WTS_CURRENT_SERVER_HANDLE](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexw#parameters) indicates the server on which your application is running
+
+7. The second parameter is `level`, a double word or `DWORD`. This can take 0 or 1. 0 provides basic information, and 1 provides extended information. 
+
+8. The 3rd param is session for which to enumerate processes. To enumerate processes for all sessions on the server, specify WTS_ANY_SESSION.
+
+9. The next is a 
+```cpp
+PWTS_PROCESS_INFO_EX info;
+```
+
+10. The enable debug prvlates method is described in the SecurityToken.md
 
 ## References
 1. https://learn.microsoft.com/en-us/windows/win32/toolhelp/taking-a-snapshot-and-viewing-processes
