@@ -111,11 +111,19 @@ int main(int argc, const char *argv[])
 	if (!hThread)
 		return Error("Failed to create remote thread");
 
-	printf("Remote thread created successfully!");
+	printf("\nRemote thread created successfully!");
 
 	WaitForSingleObject(hThread, 5000);
+
+	printf("\nWaitForSingleObject done!");
+
 	VirtualFreeEx(hProcess, buffer, 0, MEM_RELEASE);
+
+	printf("\nVirtualFreeEx done!");
+
 	CloseHandle(hProcess);
+
+	printf("\nClose Handle done!");
 
 	return 0;
 }
