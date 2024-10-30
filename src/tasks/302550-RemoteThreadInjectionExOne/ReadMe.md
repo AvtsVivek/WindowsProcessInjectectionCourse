@@ -70,7 +70,7 @@ case DLL_PROCESS_ATTACH:
 
 ![Rumtime Libs for Injected Dll](Images/59_50_InjectedDllRuntimeDebug.png)
 
-And for release its as follows.
+And for release its as follows. So this links statically, without extra dependencies on the c runtime library. 
 
 ![Rumtime Libs for Injected Dll release](Images/60_50_InjectedDllRuntimeRelease.png)
 
@@ -84,6 +84,11 @@ And for release its as follows.
 
 ![Final output](Images/62_50_FinalOutput.png)
 
+14. Dlls in the Notepad.exe in process exlorer.
+
+![Dlls loaded in Notepad process](Images/63_50_ProcessExplorerNotepadDlls.png)
+
+15. 
 
 ## References
 1. 
