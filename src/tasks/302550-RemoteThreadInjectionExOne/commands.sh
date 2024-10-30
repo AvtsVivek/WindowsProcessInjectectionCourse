@@ -13,6 +13,10 @@ code . -r
 
 dir
 
+devenv /rebuild Debug CreateRemoteThreadEx.sln
+
+dir
+
 cd x64/Debug/
 
 dir

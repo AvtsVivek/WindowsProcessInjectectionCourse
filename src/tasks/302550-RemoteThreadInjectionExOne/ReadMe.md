@@ -11,37 +11,6 @@
 
 ![Add New Project](Images/54_50_AddNewDll.png)
 
-4. We want the output of the InjectedDll Cpp project to be copied to the `CreateRemoteThread` output directory. So do the following. Right click the Injected Dll project.
-   
-![Project Props of Injected Dll](Images/55_50_RightClickInjectedDll.png)   
-
-5. Note the \ after the Output folder name.
-
-![InjectedDllProjectProps](Images/56_50_InjectedDllOutputDir.png)
-
-6. Add the following target to the `CreateRemoteThread` project. 
-
-```xml
-<Project>
-	<Target Name="CopyDLLs" AfterTargets="Build">
-		<Message Text="Executing CopyDLLs task $(TargetDir)" Importance="High" />
-		<ItemGroup>
-			<MySourceFiles Include="..\InjectedDll\Output\**\*.*"/>
-		</ItemGroup>
-		<Copy SourceFiles="@(MySourceFiles)" DestinationFolder="$(OutDir)" />
-		<Message Text="Copied build files" Importance="High" />
-	</Target>
-</Project>
-```
-
-7. Finally the build sequence of the solution. Project dependencies of `CreateRemoteThread`
-
-![Solution Props project dependencies](Images/57_50_SolutionPropsCreateRemoteThread.png)
-
- Project dependencies of `InjectedDll`
-
-![Sol Props project dependencies](Images/58_50_SolutionPropsInjectedDll.png)
-
 
 ## Notes
 1. Create a thread in the target process and instruct that thread to load a desired DLL. And that dll is going to be called, and we can do what ever we want.
@@ -96,7 +65,6 @@ case DLL_PROCESS_ATTACH:
     MessageBox(nullptr, L"Injected into another process", L"Injected", MB_OK);
 }
 ```
-
 
 
 ## References

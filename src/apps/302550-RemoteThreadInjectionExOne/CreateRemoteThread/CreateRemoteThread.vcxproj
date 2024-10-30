@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{89b8acc2-55e9-4860-be86-b258d18e8b8c}</ProjectGuid>
+    <ProjectGuid>{5872bbfa-2270-4d7b-a8c2-3b8661701bf4}</ProjectGuid>
     <RootNamespace>CreateRemoteThread</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -132,6 +132,4 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-
-
 </Project>
