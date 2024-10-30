@@ -66,6 +66,15 @@ case DLL_PROCESS_ATTACH:
 }
 ```
 
+10. Now build and run. Follow the commands.sh command sequence. 
+11. When notepad process is started, open the process explorer and search for notepad and get its id.
+
+![Notepad process in process explorer](Images/61_50_ProcessExplorerNotepad.png)
+
+12. Final output.
+
+![Final output](Images/62_50_FinalOutput.png)
+
 
 ## References
 1. 

@@ -33,7 +33,7 @@ $processes = Get-Process -Name notepad | Select -ExpandProperty ID
 # Get the length of the array, ensure its 1.
 $processes.length
 
-# Get the id 
+# Get the id. Ensure this by opening the process explorer and searching for notepad.
 $processes[0]
 
 .\CreateRemoteThread.exe $processes[0] C:\Trials\Ex\LearnWinProcInject\src\apps\302550-RemoteThreadInjectionExOne\x64\Debug\InjectedDll.dll
