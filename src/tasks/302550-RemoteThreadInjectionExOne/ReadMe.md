@@ -66,12 +66,21 @@ case DLL_PROCESS_ATTACH:
 }
 ```
 
-10. Now build and run. Follow the commands.sh command sequence. 
-11. When notepad process is started, open the process explorer and search for notepad and get its id.
+10.  FOr the InjectedDll project, in the C++ Code generation(see below), the Runtime library is Multi-threaded Debug DLL by default. This is not very good idea for another dll to come into that target process, because that creates a dependency, it can fail the loading of the dll. We need to ensure to change that to static library for the runtime library, weather its debug or release. Change as follows.  
+
+![Rumtime Libs for Injected Dll](Images/59_50_InjectedDllRuntimeDebug.png)
+
+And for release its as follows.
+
+![Rumtime Libs for Injected Dll release](Images/60_50_InjectedDllRuntimeRelease.png)
+
+11.  Now build and run. Follow the commands.sh command sequence. 
+
+12.  When notepad process is started, open the process explorer and search for notepad and get its id.
 
 ![Notepad process in process explorer](Images/61_50_ProcessExplorerNotepad.png)
 
-12. Final output.
+13. Final output.
 
 ![Final output](Images/62_50_FinalOutput.png)
 
