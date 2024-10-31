@@ -13,25 +13,27 @@
 
 
 ## Notes
-1. Create a thread in the target process and instruct that thread to load a desired DLL. And that dll is going to be called, and we can do what ever we want.
+1. Create a thread in the target process and instruct that thread to load a desired DLL. And that dll is going to be called, and we can do what ever we want. In this example, we will inject a dll into a `notepad` process.
+
 2. This is one of the oldest, if not the oldest. This is not used these days, because its easily detectable by anti malvare solutions.
+
 3. So here is the target process and attacker process. The attacker process is created using some social engineering, attacment, script etc.
 
 4. The attacker process opens a handle to the target process. This enables us to do some stuff in that process. Then write the path to the dll into the target process, using the `WriteProcessMemory` function.
 
 ![Attacker and Target Process](Images/50_50_AttacketAndTargetProcesses.png)
 
-5. Next the attacker will call the `CreateRemoteThread` function. This will create thread in the target process and tell the thread to start running, where the function `LoadLibrary` is.
+5. Next the attacker(CreateRemoteThreadProj) will call the `CreateRemoteThread` function. This will create thread in the target(notepad) process and tell the thread to start running, the function `LoadLibrary`. `CreateRemoteThreadProj` is a cpp console app, and the process id of a running notepad app needs to be provided to this console app as command line args.
 
 ![Create Remote Thread](Images/51_50_CreateThreadOnTargetProcesses.png)
 
-6. The `LoadLibrary` function is the one that can load the dll. This function will be given the path to the dll written in the target process. Our dll is going to be loaded into memory. 
+6. The `LoadLibrary` function is the one that can load the dll. This function will be given the path to the dll written in the target process. Our dll will then be loaded into memory of the target(notepad) process. So this path o the dll will be second command line argument of the `CreateRemoteThreadProj` console app, the first being the notepad process id.
 
 ![Load Library](Images/52_50_LoadLibOnTargetProcesses.png)
 
-7. Then we can remove the attcker process form existance. Our dll is hiding inside the target process. 
+7. Then we can remove the attcker process form existance. Our dll is hiding inside the target(notepad) process. 
 
-8. The InjectedDll project will have a function called `DllMain`. Look for it. This function is called in several cases, and one of the cases is when this dll is loaded into a process. 
+8. So the InjectedDll project is the second project in the solution. This is a dynamic linked lib(dll) project. This dll will be injected into the notepad. This project will have a function called `DllMain`. Look for it. In general, this function is called in several cases, and one of the cases is when this dll is loaded into a process. 
 
 ```cpp
 // dllmain.cpp : Defines the entry point for the DLL application.

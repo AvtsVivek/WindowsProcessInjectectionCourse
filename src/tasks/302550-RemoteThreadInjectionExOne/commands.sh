@@ -21,7 +21,7 @@ cd x64/Debug/
 
 dir
 
-# Just to start from a clean slate, stop all of the existing note pad processes.
+# Just to start from a clean slate, stop all of the existing note pad processes, if any.
 Stop-Process -Name "notepad"
 
 # Start a note pad process
@@ -36,12 +36,12 @@ $processes.length
 # Get the id. Ensure this by opening the process explorer and searching for notepad.
 $processes[0]
 
-# injected dll path.
+# Full injected dll path.
 $injectedDllPath = "$pwd\InjectedDll.dll"
 
 $injectedDllPath
 
-.\CreateRemoteThread.exe $processes[0] $injectedDllPath
+.\CreateRemoteThreadProj.exe $processes[0] $injectedDllPath
 
 # Close all of the notepad processes, just clean up.
 Stop-Process -Name "notepad"

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5872bbfa-2270-4d7b-a8c2-3b8661701bf4}</ProjectGuid>
-    <RootNamespace>CreateRemoteThread</RootNamespace>
+    <ProjectGuid>{f0125ddf-3040-4105-87d7-24a8c8753f7b}</ProjectGuid>
+    <RootNamespace>CreateRemoteThreadProj</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

@@ -5,7 +5,7 @@
 #include <Windows.h>
 #include <stdio.h> // for printf.
 
-int Error(const char *text)
+int Error(const char* text)
 {
 	std::cout << "Here we go...!\n";
 	printf("%s (%u)\n", text, GetLastError());
@@ -13,7 +13,7 @@ int Error(const char *text)
 }
 
 // We need to supply the dll path and the process as the command line args.
-int main(int argc, const char *argv[])
+int main(int argc, const char* argv[])
 {
 	if (argc < 3)
 	{
@@ -55,7 +55,7 @@ int main(int argc, const char *argv[])
 	// MEM_COMMIT | MEM_RESERVE, Reserve a region and commit immediately, the memory should be available, once I try to access it.
 	// Then I have to provide a protection to these pages, that is read and write.
 
-	void *buffer = VirtualAllocEx(hProcess, nullptr, 1 << 12, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
+	void* buffer = VirtualAllocEx(hProcess, nullptr, 1 << 12, MEM_COMMIT | MEM_RESERVE, PAGE_READWRITE);
 
 	// This can technically fail, but its very rare.
 	if (!buffer)
@@ -106,8 +106,8 @@ int main(int argc, const char *argv[])
 	// The final parameter is the id of the new thread. We are not going to do anything with that id for this example.
 	// So nullprt should be fine.
 	HANDLE hThread = CreateRemoteThread(hProcess, nullptr, 0,
-										(LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L"kernel32"), "LoadLibraryA"),
-										buffer, 0, nullptr);
+		(LPTHREAD_START_ROUTINE)GetProcAddress(GetModuleHandle(L"kernel32"), "LoadLibraryA"),
+		buffer, 0, nullptr);
 	if (!hThread)
 		return Error("Failed to create remote thread");
 
