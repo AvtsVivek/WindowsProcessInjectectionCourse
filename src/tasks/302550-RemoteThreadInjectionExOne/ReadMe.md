@@ -82,15 +82,43 @@ And for release its as follows. So this links statically, without extra dependen
 
 ![Notepad process in process explorer](Images/61_50_ProcessExplorerNotepad.png)
 
-13. Final output.
+13. Final output. The following image shows that the InjectedDll is injected into the notepad process. As soon as the dll is loaded into a process, the following message box is showed out.
 
 ![Final output](Images/62_50_FinalOutput.png)
 
-14. Dlls in the Notepad.exe in process exlorer.
+14. Dlls in the Notepad.exe in process explorer.
 
 ![Dlls loaded in Notepad process](Images/63_50_ProcessExplorerNotepadDlls.png)
 
 15. 
+
+## Summary Steps.
+1. OpenProcess. Open a handle to the target process
+2. VirtualAllocEx. Allocate memory in the target process
+3. WriteProcessMemory. Write DLL path to the target process
+4. CreateRemoteThread. Create a thread in the target process
+5. LoadLibrary. Load a DLL
+
+## Pros and cons.
+
+1. Pros
+
+   1. Easy to use
+
+2. Cons
+
+   1. There must be a file (DLL) on disk
+
+   2. Anti malware products detect CreateRemoteThread (and similar calls) easily
+
+   3. Does not work across sessions
+
+3. Detection
+
+   1. Kernel driver or ETW thread events
+
+   2. Function hooks
+
 
 ## References
 1. 
