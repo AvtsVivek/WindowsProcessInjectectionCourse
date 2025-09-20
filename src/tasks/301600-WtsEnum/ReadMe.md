@@ -32,24 +32,27 @@ to
 5. 
 
 ## Notes
-1. Windows Terminal Services.
-2. A set of functions intended for terminal services environment, but work equally well in a local environment.
-3. Functions exist for enumerating processes, sessions and getting detailed session information
-4. [WTSEnumerateProcesses(Ex)](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexa). 
-5. Ex is extended version.
 
-6. [WTS_CURRENT_SERVER_HANDLE](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexw#parameters) indicates the server on which your application is running
+1. Command line compilation is not working. Please use Visual Studio IDE to compile and run the code.
 
-7. The second parameter is `level`, a double word or `DWORD`. This can take 0 or 1. 0 provides basic information, and 1 provides extended information. 
+2. Windows Terminal Services.
+3. A set of functions intended for terminal services environment, but work equally well in a local environment.
+4. Functions exist for enumerating processes, sessions and getting detailed session information
+5. [WTSEnumerateProcesses(Ex)](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexa). 
+6. Ex is extended version.
 
-8. The 3rd param is session for which to enumerate processes. To enumerate processes for all sessions on the server, specify WTS_ANY_SESSION.
+7. [WTS_CURRENT_SERVER_HANDLE](https://learn.microsoft.com/en-us/windows/win32/api/wtsapi32/nf-wtsapi32-wtsenumerateprocessesexw#parameters) indicates the server on which your application is running
 
-9. The next is a 
+8. The second parameter is `level`, a double word or `DWORD`. This can take 0 or 1. 0 provides basic information, and 1 provides extended information. 
+
+9. The 3rd param is session for which to enumerate processes. To enumerate processes for all sessions on the server, specify WTS_ANY_SESSION.
+
+10. The next is a
 ```cpp
 PWTS_PROCESS_INFO_EX info;
 ```
 
-10. The enable debug prvlates method is described in the SecurityToken.md
+11. The enable debug privileges method is described in the SecurityToken.md
 
 ## References
 1. https://learn.microsoft.com/en-us/windows/win32/toolhelp/taking-a-snapshot-and-viewing-processes

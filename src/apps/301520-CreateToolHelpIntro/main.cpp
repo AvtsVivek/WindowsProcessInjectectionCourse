@@ -12,7 +12,7 @@ int ProcEnumWithToolhelp();
 int main()
 {
 	ProcEnumWithToolhelp();
-	std::cout << "Hello World!\n";
+	std::cout << "Process Enumeration completed!\n";
 }
 
 
@@ -23,8 +23,9 @@ int Error(const char* text) {
 
 int ProcEnumWithToolhelp() {
 
+	// https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-createtoolhelp32snapshot
 	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-	if (hSnapshot == INVALID_HANDLE_VALUE)
+	if (hSnapshot == INVALID_HANDLE_VALUE) // The value of INVALID_HANDLE_VALUE is -1 (cast to HANDLE).
 		return Error("Failed to create snapshot");
 
 	// This structure holds information after we start the enumeration process.

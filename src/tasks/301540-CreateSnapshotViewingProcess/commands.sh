@@ -1,9 +1,9 @@
 
 cd ../../..
 
-cd src/tasks/301520-CreateToolHelpIntro
+cd src/tasks/301540-CreateSnapshotViewingProcess
 
-cd src/apps/301520-CreateToolHelpIntro
+cd src/apps/301540-CreateSnapshotViewingProcess
 
 start .
 

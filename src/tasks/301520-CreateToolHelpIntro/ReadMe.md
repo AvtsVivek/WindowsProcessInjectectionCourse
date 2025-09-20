@@ -23,7 +23,7 @@ Or you this.
 
 ## Notes
 1. Simple program to enumerate processes.
-2. If you want to be stealthy and inconspiquous, then instead of using higher languages like C#, use windows API.
+2. If you want to be stealthy and inconspicuous, then instead of using higher languages like C#, use windows API.
 3. Include the following.
 ```cpp
 #include <Windows.h>
@@ -37,11 +37,13 @@ Or you this.
 PROCESSENTRY32 pe;
 ```
 
+1. Finally, if we get an error, we can use GetLastError() to get the error code. Once we have an error code, we can look it up online to see what went wrong. Or use the error code lookup tool in older versions of Visual Studio. In Visual Studio 2022, this is not available. So, we can use the following link to look up error codes.
+https://learn.microsoft.com/en-us/windows/win32/debug/system-error-codes
 
 
 ## References
 1. https://learn.microsoft.com/en-us/windows/win32/toolhelp/taking-a-snapshot-and-viewing-processes
-2. 
-
+2. https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-createtoolhelp32snapshot
+3. https://learn.microsoft.com/en-us/windows/win32/api/tlhelp32/nf-tlhelp32-createtoolhelp32snapshot#parameters
 
 

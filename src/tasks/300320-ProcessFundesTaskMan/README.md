@@ -16,22 +16,22 @@
    3. Window Key + R -> calc -> press enter.
     ![The calc app](Images/54_50_CalculatorApp.jpg)
    4. In the task manager, look for the calculator task. Notice that the status is running. Now minimize the calc app. Now notice that the status changes to suspended. 
-   5. So when the app is minimized, the kernal forcefully suspendeds the app, so that the app does not get any CPU 
-   6. The other status is Unresponsive. Sometimes, a windows gets unreponsive. This happens when the UI thread is unable to check its message queue for 5 secs. 
+   5. So when the app is minimized, the kernel forcefully suspended the app, so that the app does not get any CPU 
+   6. The other status is Unresponsive. Sometimes, a windows gets unresponsive. This happens when the UI thread is unable to check its message queue for 5 secs. 
    7. If the process has no UI, its almost always be in running state. The term `Running` is confusing. In most cases, its idel, doing nothing. Its CPU time is zero.
     ![User and CPU TIme](Images/55_50_UserAndCpuTime.jpg)
 6. Notice the user name column. This is where the access token we saw earlier comes in. SYSTEM, NETWORK SERVICE and LOCAL SERVICE are special accounts.
-7. Right Click any header, see the following, status, user name or any other column header and choose slect coloum.
+7. Right Click any header, see the following, status, user name or any other column header and choose select column.
     ![Select Column](Images/56_50_SelectCols.jpg)
 8.  Then there is session. Session 0 is for system processes, and session 1 is for logged on user.
 9.  Memory, or the active private working set(APWS). The name here is confusing. 
-10. This is the amount of physical RAM that is consumened by that process for private memory. 
-11. Private memory is private to the process. This is a bad counter to look at becacuse this is misleading. 
+10. This is the amount of physical RAM that is consumed by that process for private memory. 
+11. Private memory is private to the process. This is a bad counter to look at because this is misleading. 
 12. This number shows the amount of RAM that is being used but the real amount of memory consumed is typically higher. 
 13. A better counter would be commit size. This shows the committed memory, some of which is in physical memory and some of which may not in physical memory. 
-14. 
 
-    ![Commit size](Images/57_50_MemoryCols.jpg)
+14. ![Commit size](Images/57_50_MemoryCols.jpg)
+    
 
 15. The commit size is always larger than the 
 16. In some cases, the physical memory is close to APWS. This means that process is using most of the memory quite frequently, 

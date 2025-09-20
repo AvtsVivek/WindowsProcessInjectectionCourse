@@ -47,8 +47,8 @@ int ProcEnumWithWTS()
 	{
 		PWTS_PROCESS_INFO_EX pinfo = info + i;
 		printf("PID: %6u   Threads: %3u Session: %u (%ws) Username: %ws\n",
-			   pinfo->ProcessId, pinfo->NumberOfThreads, pinfo->SessionId, pinfo->pProcessName,
-			   GetUserNameFromSid(pinfo->pUserSid).c_str());
+			pinfo->ProcessId, pinfo->NumberOfThreads, pinfo->SessionId, pinfo->pProcessName,
+			GetUserNameFromSid(pinfo->pUserSid).c_str());
 	}
 
 	// WTSTypeProcessInfoLevel1
