@@ -1,9 +1,9 @@
 # C# CSharp Process Injection
 
-This repository contains examples of process injection techniques implemented in C#. The examples demonstrate how to inject shellcode into a target process using various methods.
-
-This example is not running on my laptop because of Windows Defender. You can try it on a VM.
+1. This example is not running on my laptop because of Windows Defender. You can try it on a VM.
 You need to disable Windows Defender or add an exclusion for the compiled executable.
+
+2. To run this example, un comment the code. 
 
 The following are the steps to exclude the folder in Windows Defender:
 
