@@ -9,14 +9,13 @@ The following are the steps to exclude the folder in Windows Defender:
 
 1. Open Windows Security. You can do this by searching for "Windows Security" in the Start menu.
    ![Windows Security](images/50_51_WinSecurity.png)
-2. Click on "Virus & threat protection."
-   ![Virus & threat protection](images/51_51_ManageSettings.png)
-3. Under "Virus & threat protection settings," click on "Manage settings."
-4. Scroll down and click on "Add or remove exclusions."
+2. Click on "Virus & threat protection". Under "Virus & threat protection settings," click on "Manage settings."
+   ![Virus & threat protection](images/51_51_ManageSettings.png) 
+3. Scroll down and click on "Add or remove exclusions."
     ![Add or remove exclusions](images/52_51_ManageSettings.png) 
-5. Click on "Add an exclusion" and select "Folder."
+4. Click on "Add an exclusion" and select "Folder."
     ![Add an exclusion](images/53_51_Exclusions.png)
-6. Choose the folder where the compiled executable is located.
+5. Choose the folder where the compiled executable is located.
 
 I tried the following but it didn't work:
 

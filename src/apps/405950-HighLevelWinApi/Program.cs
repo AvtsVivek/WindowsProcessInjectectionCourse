@@ -20,11 +20,23 @@ namespace SimpleShellCode
 
         static void Main(string[] args)
         {
+            //#region Code_Description
             //byte[] buf;
             //IntPtr hProcess = default;
             //Process[] powershellPid = Process.GetProcessesByName("powershell");
             //int processID = 0;
             //bool processArch = false;
+
+            //if (powershellPid.Length == 0)
+            //{
+                    // Console.ForegroundColor = ConsoleColor.Red;
+            //    Console.WriteLine("Target process, prowershell, not found!");
+
+            //    Console.WriteLine("Start powershell and try again");
+            // Console.ForegroundColor = ConsoleColor.White;
+            //    return;
+            //}
+
             //foreach (Process process in powershellPid)
             //{
             //    //Open remote process
@@ -139,8 +151,8 @@ namespace SimpleShellCode
             //    //Injected process is x64
             //    buf = bufx64;
             //    Console.WriteLine("Shellcode will be injected to x64 process.");
-
             //}
+
             //unsafe
             //{
             //    fixed (byte* p = &buf[0])
@@ -157,6 +169,8 @@ namespace SimpleShellCode
 
             //    }
             //}
+
+
             //Console.WriteLine("\n");
             //Console.WriteLine("1st breakpoint. Press Enter to continue ...");
             //Console.ReadLine();
@@ -189,6 +203,8 @@ namespace SimpleShellCode
             //    }
 
             //}
+
+            //#endregion
         }
     }
 }
